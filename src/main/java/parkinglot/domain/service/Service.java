@@ -15,17 +15,12 @@ import java.util.List;
 
 /**
  *
- * @author ADMIN
+ * @author Luis
  */
 public class Service {
     private IVehicleRepository repository;
 
-    /**
-     * Inyección de dependencias en el constructor. Ya no conviene que el mismo
-     * servicio cree un repositorio concreto
-     *
-     * @param repository una clase hija de IProductRepository
-     */
+
     public Service(IVehicleRepository repository) {
         this.repository = repository;
     }

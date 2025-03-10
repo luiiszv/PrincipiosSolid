@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package parkinglot.access;
+
 import parkinglot.domain.TypeEnum;
 import parkinglot.domain.Vehicle;
 import parkinglot.domain.service.Service;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
- *
  * @author ADMIN
  */
 public class VehicleRepository implements IVehicleRepository {
@@ -27,7 +29,7 @@ public class VehicleRepository implements IVehicleRepository {
     public VehicleRepository() {
         initDatabase();
     }
-    
+
     @Override
     public boolean save(Vehicle newVehicle) {
         try {
@@ -54,7 +56,7 @@ public class VehicleRepository implements IVehicleRepository {
 
     @Override
     public List<Vehicle> list() {
-    List<Vehicle> vehicles = new ArrayList<>();
+        List<Vehicle> vehicles = new ArrayList<>();
         try {
 
             String sql = "SELECT Plate, Type FROM Vehicle";
@@ -74,9 +76,9 @@ public class VehicleRepository implements IVehicleRepository {
         } catch (SQLException ex) {
             Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return vehicles;    
+        return vehicles;
     }
-    
+
     private void initDatabase() {
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS Vehicle (\n"
@@ -97,8 +99,10 @@ public class VehicleRepository implements IVehicleRepository {
 
     public void connect() {
         // SQLite connection string
-        //String url = "jdbc:sqlite:./mydatabase.db";
+
+//        String url = "jdbc:sqlite:./database.db";
         String url = "jdbc:sqlite::memory:";
+
 
         try {
             conn = DriverManager.getConnection(url);
