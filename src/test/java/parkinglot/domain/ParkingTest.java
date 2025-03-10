@@ -83,7 +83,7 @@ public class ParkingTest {
         Vehicle veh2 = new Vehicle("NBV-987", TypeEnum.CAR);
         service.saveVehicle(veh2);
 
-        Vehicle veh3 = new Vehicle("IJY-987", TypeEnum.TRUCK);
+        Vehicle veh3 = new Vehicle("IJY-986", TypeEnum.TRUCK);
         service.saveVehicle(veh3);
 
         List<Vehicle> list = service.listVehicles();
